@@ -1,0 +1,39 @@
+{
+  "name": "collaborative-editor-example",
+  "version": "1.0.0",
+  "description": "A simple rich-text editor example based on Quill and ShareDB",
+  "main": "server.js",
+  "scripts": {
+    "copy": "cp -R src/server dist/ && cp -R src/common dist/",
+    "start-server": "npm run copy && node dist/server/server.js",
+    "watch-client": "webpack && webpack-dev-server --inline --hot",
+    "dist": "npm run clean && npm run copy && webpack",
+    "clean": "rm -rf dist/*"
+  },
+  "author": "Moshlehuddin Apu",
+  "license": "MIT",
+  "dependencies": {
+    "@teamwork/websocket-json-stream": "^2.0.0",
+    "babel-loader": "^8.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "quill": "^1.3.7",
+    "reconnecting-websocket": "^4.2.0",
+    "rich-text": "^4.0.0",
+    "sharedb": "^1.0.0-beta",
+    "ws": "^7.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-async-to-generator": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/register": "^7.9.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
